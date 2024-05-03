@@ -23,6 +23,21 @@ O objetivo da atividade é, baseado em um banco com certas tabelas (`pessoa`, `c
 De forma mais específica, o sistema deve ser capaz de salvar esses dados na nova tabela (o `ID`, `nome` e o `cargo` estão presentes nas primeiras tabelas; o `salario` precisa ser calculado com base nos dados delas e só depois salvo) e imprimi-los em uma tela com nome ***Listagem de Pessoas***. Também foi pedido uma opção para o cálculo/recálculo de salários.
 
 ---
+### Endpoints
+
+Por padrão, o projeto está configurado para rodar na `porta 8090`.
+
+No projeto, os endpoints de interesse são:
+* O que exibe a listagem de pessoas, requisito da atividade : `/listagem`
+* O que mostra a tabela de vencimentos, para ver melhor as regras : `/vencimentos`
+* O que mostra dados-chave de uma pessoa, baseado no ID dela na tabela: `/pessoas/{id}`
+* O que serve para validar se a aplicação está reconhecendo as JSPs: `/`
+
+Esses quatro são os que devem ser usados corriqueiramente.
+
+Na tela de listagem, ao apertar o botão, deve-se aguardar um momento até que termine o processamento de informações ao banco, onde será levado para outro endpoint, o `/salario/atualizar-consolidados`, que é só um Response de confirmação que o processo teve êxito.
+
+---
 
 ## O que foi feito
 
@@ -43,6 +58,8 @@ A parte operacional foi feita pensado no modelo MVC, onde ocorre a implementaç�
 
 O projeto usa Maven para gerenciamento de dependências; checar o arquivo "pom.xml" caso queira ver o que é usado.
 
+Também vale a pena checar o application.properties, caso precise mudar as configurações do seu banco de dados e coisas de execução local (por exemplo, em qual porta quer rodar o projeto).
+
 ### 3 - Implementação de funcionalidades/itens
 
 Como dito no ponto anterior, o projeto foi feito no modelo MVC. Ou seja, foram implementados:
@@ -59,6 +76,7 @@ Como componentes opcionais, foram implementas:
 
 Também foi implementado, por motivos pessoais:
 
+* Endpoint para checar se a aplicação está funcionando bem;
 * Tela para consulta individual de uma pessoa (baseada no ID);
 * Tela que mostra a tabela de vencimento, mostrando melhor as regras de pagamento;
 * Validação no caso de houver alguma "pessoa" com "cargo_id" inválido/nulo (campo 928);

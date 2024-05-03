@@ -51,10 +51,7 @@ public class SalarioService {
     }
     
     public List<Pessoa> buscarDetalhesPessoas() {
-        // Lógica para buscar os detalhes das pessoas, como ID, nome e cargo
-        // e adicionar os salários calculados para cada uma delas
         List<Pessoa> detalhesPessoas = pessoaRepository.findAll();
-        // Aqui você pode adicionar os salários calculados para cada pessoa
         return detalhesPessoas;
     }
     

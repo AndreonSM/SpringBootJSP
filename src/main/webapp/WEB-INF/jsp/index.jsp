@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>HEADER</h1>
+	<h1>O projeto está online e operante; as JSPs podem ser acessadas!</h1>
 </body>
 </html>

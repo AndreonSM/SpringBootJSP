@@ -39,11 +39,9 @@ public class PessoaController {
             model.addAttribute("cargo", "Sem cargo");
         }
            
-        // Adiciona o salário consolidado aos atributos do modelo
         double salarioConsolidado = salarioService.calcularSalarioParaPessoa(pessoa);
-        model.addAttribute("salarioConsolidado", salarioConsolidado); // Adiciona o salário consolidado ao modelo
-        
-        return "mostrarPessoa"; // Nome da página JSP para exibir os detalhes da pessoa
+        model.addAttribute("salarioConsolidado", salarioConsolidado); 
+        return "mostrarPessoa";
     }
 
 
