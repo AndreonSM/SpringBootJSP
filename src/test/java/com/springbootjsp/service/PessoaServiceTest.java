@@ -28,7 +28,7 @@ public class PessoaServiceTest {
     public void testCriarPessoa() {
         // Configurando
         Pessoa pessoa = new Pessoa(100000L, "Fulano", "usuario", "fulano@email.com", 4);
-        Pessoa pessoaCriada = new Pessoa(1L, "Fulano", "usuario", "fulano@email.com", 3);
+        Pessoa pessoaCriada = new Pessoa(100000L, "Fulano", "usuario", "fulano@email.com", 3);
 
         when(pessoaRepository.save(pessoa)).thenReturn(pessoaCriada);
 
