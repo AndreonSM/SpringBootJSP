@@ -91,19 +91,64 @@ Também foi implementado, por motivos pessoais:
 
 ---
 
-## Execução em um ambiente local e pré-requisitos.
+## Execução em um ambiente local e pré-requisitos
 
-É esperado que tenha Java 17, Maven e PostgreSQL.
+É esperado que tenha JDK 17, Maven, Git e PostgreSQL em execução. Se não houver qualquer um destes, instale-os!
 
-* Versão 1 (Caso utilize o Spring Tool Suite 4)
+- - Verifique se o Java SDK está instalado - no cmd/terminal, execute o comando: 
 
-Se utilizar o STS (como eu), basta importar o projeto Maven e executa-lo como Spring Boot App.
+```
+java -version
+```  
 
-* Versão 2 (Casos generalizados)
+Exemplo de saída esperada do terminal: 
 
-[PARA REDIGIR]
+`java version "17.0.9" 2023-10-17 LTS`
 
-Abra o projeto em qualquer IDE com suporte ao Java (Eclipse, Netbeans, VSCode com as extensões necessárias) e execute-o diretamente lá. 
+- - Verifique se o Apache Maven está instalado - no cmd/terminal, execute o comando: 
+
+```
+mvn -v
+``` 
+
+Exemplo de saída esperada do terminal:
+```
+Apache Maven 3.9.6 (bc0240f3c744dd6b6ec2920b3cd08dcc295161ae)
+Maven home: C:\bin\apache-maven-3.9.6
+Java version: 17.0.9, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jdk-17
+Default locale: pt_BR, platform encoding: Cp1252
+OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
+```
+
+
+
+
+### Versão 1 (Caso utilize o Spring Tool Suite 4)
+
+Se utilizar o STS (como eu), basta clonar o repositório e importar o projeto Maven (o pom.xml) e executa-lo como Spring Boot App no seu STS.
+
+### Versão 2 (Casos generalizados)
+
+#### Configurando...
+* Clone o repositório do projeto do GitHub para o seu ambiente local usando o Git.
+* Configurações do Banco de Dados - No arquivo application.properties ou application.yml do projeto Spring Boot, configure as propriedades de conexão com o banco de dados PostgreSQL, como URL, nome do banco de dados, nome de usuário e senha. Tem valores padrão no do projeto, talvez você queira muda-los.
+
+#### Preparando o banco...
+Utilize os arquivos no diretório "extras", em especial o script de criação e importação, para criar as tabelas na sua database do PostgreSQL - note que é pre-suposto que você tenha uma massa para inserir. Está disponibilizada, na pasta, a massa utilizada. 
+
+#### Executando...
+* Compilação
+
+Navegue até o diretório raiz do projeto no terminal e execute o comando `mvn clean package` para compilar o projeto e gerar o arquivo JAR executável.
+
+* Execução
+
+Após a conclusão da compilação, navegue até o diretório target dentro do diretório do projeto e execute o comando `java -jar <nome_do_arquivo_jar>` para iniciar o aplicativo Spring Boot. Substitua <nome_do_arquivo_jar> pelo nome real do arquivo JAR gerado na sua máquina.
+
+#### Acessando...
+
+* Abra um navegador da web e acesse http://localhost:8090/ para ver a página de confirmação de execução e voilà: basta acessar os endpoints. Está sugerido a porta 8090 pois é a que está sendo utilizada no `application.properties`.
+ 
 
 ---
 
