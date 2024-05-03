@@ -31,8 +31,7 @@ public class Pessoa {
     	this.nome = nome;
     	this.usuario = usuario;
     	this.email = email;
-    	this.setCargoId(cargo_id);
-    	
+    	this.setCargoId(cargo_id);	
     }
     
 	public Pessoa(Long id, String nome, String cidade, String email, String cep, String endereco, String pais,

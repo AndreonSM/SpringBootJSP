@@ -33,7 +33,15 @@ No projeto, os endpoints de interesse são:
 * O que mostra dados-chave de uma pessoa, baseado no ID dela na tabela: `/pessoas/{id}`
 * O que serve para validar se a aplicação está reconhecendo as JSPs: `/`
 
-Esses quatro são os que devem ser usados corriqueiramente.
+EDIT 18:37 03/05/2024 - New endpoints:
+
+* Tela de criação de Pessoa com alguns dos campos mais importantes: `/pessoas/criar`
+
+* Tela de edição de Pessoa com alguns dos campos mais importantes: `/pessoas/editar/{id}`; precisa ser um ID existente - não foi feito o tratamento para casos de ID inválido!
+
+* O que remove uma pessoa da tabela "Pessoa": `/pessoas/excluir/{id}`; de igual modo ao anterior, precisa ser um ID existente e não há tratamento para casos de ID inválidos. Penso em fazer, futuramente, um pop-up alertando a exclusão. Ou seja: <font color="red">**CUIDADO! ASSIM QUE ACESSAR O ENDPOINT, A PESSOA É AUTOMATICAMENTE EXCLUÍDO!**</font>
+
+Esses são os que devem ser usados corriqueiramente.
 
 Na tela de listagem, ao apertar o botão, deve-se aguardar um momento até que termine o processamento de informações ao banco, onde será levado para outro endpoint, o `/salario/atualizar-consolidados`, que é só um Response de confirmação que o processo teve êxito.
 
@@ -71,8 +79,8 @@ A partir destas, o que foi pedido na atividade foi implementado, que é:
 * Tela de ***Listagem de Pessoas*** utilizando JSP; e 
 * Implementação do cálculo dos salários das pessoas da forma que foi pedido, com opção (através de um botão) na tela para recalcula-los.
 
-Como componentes opcionais, foram implementas:
-* TBD, olhar último tópico do README;
+Como componentes opcionais, foram implementados:
+* Olhar último tópico do README;
 
 Também foi implementado, por motivos pessoais:
 
@@ -99,14 +107,16 @@ Abra o projeto em qualquer IDE com suporte ao Java (Eclipse, Netbeans, VSCode co
 
 ---
 
-## Diferenciais opcionais - podem vir em um futuro commit
+## Diferenciais opcionais FEITOS
+
+● Criar um CRUD de Pessoa para atualizar, excluir e incluir novas pessoas.
+
+## Diferenciais opcionais TO DO - podem vir em um futuro commit
 
 ● Utilizar processamento assíncrono no cálculo dos salários.
 
 ● Criar um relatório, utilizando JasperReports, para exibição das pessoas e seus
 salários calculados e exportação em PDF.
-
-● Criar um CRUD de Pessoa para atualizar, excluir e incluir novas pessoas.
 
 ● Criar um CRUD de usuário e implementar autenticação via Login e Senha.
 
