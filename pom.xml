@@ -87,10 +87,11 @@
 		</dependency>
 		
 		<dependency>
-    		<groupId>net.sf.jasperreports</groupId>
-    		<artifactId>jasperreports</artifactId>
-    		<version>6.17.0</version>
+    		<groupId>org.junit.jupiter</groupId>
+    		<artifactId>junit-jupiter-api</artifactId>
+    		<scope>test</scope>
 		</dependency>
+
 		
 
 	</dependencies>
@@ -101,30 +102,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
-			
-			<plugin>
-            	<groupId>net.sf.jasperreports</groupId>
-            	<artifactId>jasperreports-maven-plugin</artifactId>
-            	<version>6.17.0</version>
-            	<executions>
-                	<execution>
-                    	<goals>
-                        	<goal>compile-reports</goal>
-                    	</goals>
-                	</execution>
-            	</executions>
-            	<configuration>
-                	<sourceFileFormats>
-                    	<sourceFileFormat>jrxml</sourceFileFormat>
-                	</sourceFileFormats>
-                	<compiler>
-                    	<classpath>
-                        	<pathElement>${java.home}/../lib/tools.jar</pathElement>
-                    	</classpath>
-                	</compiler>
-                	<outputDirectory>${project.build.directory}/classes/reports</outputDirectory>
-            	</configuration>
-        	</plugin>
 		</plugins>
 	</build>
 
